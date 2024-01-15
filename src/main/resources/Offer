@@ -1,0 +1,25 @@
+import com.project.DroolsDemoProject.Order;
+
+rule "HDFC"
+
+when
+orderObject : Order(cardType=="HDFC" && price>10000);
+then
+orderObject.setDiscount(5);
+end;
+
+rule "ICICI"
+
+when
+orderObject : Order(cardType=="ICICI" && price>15000);
+then
+orderObject.setDiscount(9);
+end;
+
+rule "DBS"
+
+when
+orderObject : Order(cardType=="DBS" && price>15000);
+then
+orderObject.setDiscount(11);
+end;
